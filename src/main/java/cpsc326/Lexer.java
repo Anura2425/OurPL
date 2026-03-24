@@ -102,8 +102,7 @@ class Lexer {
             advance();
         }
         if (isAtEnd()) {
-            System.err.println("Unterminated string.");
-            OurPL.hadError = true;
+            OurPL.error(line, "Unterminated string.");
             return;
         }
         advance();
@@ -220,8 +219,7 @@ class Lexer {
                     identifier();
                 } else {
                     // idk if this is needed but other characters like @ $ etc arent handled rn otherwise?
-                    System.err.println("Unexpected character.");
-                    OurPL.hadError = true;
+                    OurPL.error(line, "Unexpected character.");
                 }
                 break;
         } 
