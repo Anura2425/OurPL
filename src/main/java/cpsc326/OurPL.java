@@ -46,6 +46,7 @@ public class OurPL {
         }
     }
 
+    // run using ` mvn exec:java "-Dexec.args=examples/parse1.opl" `
     public static void run(String source) {
         Lexer lexer = new Lexer(source);
         List<Token> tokens = lexer.scanTokens();
@@ -53,14 +54,33 @@ public class OurPL {
         for (Token token : tokens){
             System.out.println(token);
         }
+
+        Parser parser = new Parser(tokens);
+        Expr expr = parser.parse();
+
+        if (expr != null){
+            System.out.println("\nASTPrinter Output:");
+            System.out.println(new ASTPrinter().print(expr));
+        }
     }
 
     static void error(int line, String message) {
         report(line, "", message);
     }
 
+    static void error(Token token, String message) {
+        hadError = true;
+        System.err.println(message);
+    }
+
     private static void report(int line, String where, String message) {
         System.err.println("[line " + line + "] Error" + where + ": " + message);
+        hadError = true;
+    }
+
+    // get rid of this later, mvn getting mad at me because interpreter file was having error because this function didn't exist 😡😡😡😡😡😡😡
+    static void runtimeError(RuntimeError error) {
+        System.err.println(error.getMessage() + "\n[line " + error.token.line + "]");
         hadError = true;
     }
 }
