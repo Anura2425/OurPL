@@ -82,23 +82,11 @@ class Parser {
     }
 
     private Expr primary() {
-        Token token = advance();
-        switch (token.type) {
-            case NUMBER:
-                break;
-            case STRING:
-                break;
-            case TRUE:
-                break;
-            case FALSE:
-                break;
-            case NIL:
-                break;
-            case LEFT_PAREN:
-                break;
-            default:
-                break;
-        }
+        if (match(FALSE)) return new Expr.Literal(false);
+        if (match(TRUE)) return new Expr.Literal(true);
+        if (match(NIL)) return new Expr.Literal(null);
+
+        if (match(LEFT_PAREN))
 
         throw error(peek(), "Expect expression.");
     }
