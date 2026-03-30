@@ -67,17 +67,12 @@ class Parser {
     }
 
     private Expr unary() {
-        if (check(BANG)){
-            Token operator = consume(BANG, "Failed to consume bang operator.");
+        if (match(BANG, MINUS)) {
+            Token operator = previous();
             Expr right = unary();
-            Expr expr = new Expr.Unary(operator, right);
-            return expr;
-        } else if (check(MINUS)){
-            Token operator = consume(MINUS, "Failed to consume '-' operator.");
-            Expr right = unary();
-            Expr expr = new Expr.Unary(operator, right);
-            return expr;
+            return new Expr.Unary(operator, right);
         }
+
         return primary();
     }
 
@@ -86,7 +81,17 @@ class Parser {
         if (match(TRUE)) return new Expr.Literal(true);
         if (match(NIL)) return new Expr.Literal(null);
 
-        if (match(LEFT_PAREN))
+        if (match(NUMBER, STRING)) {
+            return new Expr.Literal(previous().literal);
+        }
+
+        // grouping
+        if (match(LEFT_PAREN)) {
+            Token leftParen = previous();
+            Expr expr = expression();
+            Token rightParen = consume(RIGHT_PAREN, "Expected a ')' after grouping.");
+            return new Expr.Grouping(leftParen, expr, rightParen);
+        }
 
         throw error(peek(), "Expect expression.");
     }

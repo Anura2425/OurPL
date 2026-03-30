@@ -61,7 +61,7 @@ abstract class Expr {
     }
 
     static class Literal extends Expr {
-        Literal(Literal value){
+        Literal(Object value){
             this.value = value;
         }
 
@@ -70,7 +70,7 @@ abstract class Expr {
             return visitor.visitLiteralExpr(this);
         }
 
-        final Literal value;
+        final Object value;
     }
 
     abstract <R> R accept(Visitor<R> visitor);
