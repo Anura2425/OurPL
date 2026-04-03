@@ -48,13 +48,16 @@ public class OurPL {
 
     // run using ` mvn exec:java "-Dexec.args=examples/parse1.opl" `
     public static void run(String source) {
+        // Lexer
         Lexer lexer = new Lexer(source);
         List<Token> tokens = lexer.scanTokens();
 
         for (Token token : tokens){
             System.out.println(token);
         }
-
+        
+        // Parser
+        // TODO: Make ASTPrinter work with statements
         Parser parser = new Parser(tokens);
         Expr expr = parser.parse();
 
