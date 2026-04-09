@@ -27,6 +27,28 @@ class Parser {
         }
     }
 
+    private Stmt declaration(){
+        try{
+            if(match(VAR)){
+                return varDeclaration();
+            }
+            return statement();
+        } catch (ParseError error){
+            synchronize();
+            return null;
+        }
+    }
+
+    private Stmt varDeclaration(){
+        Token name = consume(IDENTIFIER, "Expect variable name.");
+        Expr initializer = null;
+        if(match(EQUAL)){
+            initializer = expression();
+        }
+        consume(SEMICOLON, "Expected ';' after variable declaration.");
+        return new Stmt.VarDecl(name, initializer);
+    }
+
     private Stmt statement(){
         if (match(PRINT)){
             return PrintStatement();
