@@ -59,12 +59,16 @@ public class OurPL {
         // Parser
         // TODO: Make ASTPrinter work with statements
         Parser parser = new Parser(tokens);
-        Expr expr = parser.parse();
+        List<Stmt> stmts = parser.parse();
 
-        if (expr != null){
-            System.out.println("\nASTPrinter Output:");
-            System.out.println(new ASTPrinter().print(expr));
-        }
+        System.out.println((stmts));
+        // if (expr != null){
+        //     System.out.println("\nASTPrinter Output:");
+        //     System.out.println(new ASTPrinter().print(expr));
+        // }
+
+        Interpreter interpreter = new Interpreter();
+        interpreter.interpret(stmts);
     }
 
     static void error(int line, String message) {
