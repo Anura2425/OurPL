@@ -5,16 +5,16 @@ abstract class Stmt {
     interface Visitor<R>{
         R visitPrintStatement(Stmt.Print Stmt);
         R visitExpressionStatement(Stmt.Expression Stmt);
-        R visitVarDeclaration(Stmt.VarDecl Stmt);
+        R visitVarStatement(Stmt.Var Stmt);
         R visitBlockStatement(Stmt.Block Stmt);
         R visitIfStatement(Stmt.If Stmt);
         R visitWhileStatement(Stmt.While Stmt);
     }
 
     static class Block extends Stmt {
-        final List<Stmt> stmt;
+        final List<Stmt> statements;
         Block(List<Stmt> stmts){
-            stmt = stmts;
+            statements = stmts;
         }
         @Override
         <R> R accept(Visitor<R> visitor) {
@@ -72,16 +72,16 @@ abstract class Stmt {
         }
     }
 
-    static class VarDecl extends Stmt {
+    static class Var extends Stmt {
         final Token name;
         final Expr initializer;
-        VarDecl(Token n, Expr i){
+        Var(Token n, Expr i){
             initializer = i;
             name = n;
         }
         @Override
         <R> R accept(Visitor<R> visitor) {
-            return visitor.visitVarDeclaration(this);
+            return visitor.visitVarStatement(this);
         }
     }
 

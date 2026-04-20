@@ -1,13 +1,107 @@
 package cpsc326;
 
-class Interpreter implements Expr.Visitor<Object>{
-    void interpret(Expr expression) {
+import java.util.List;
+
+import cpsc326.Expr.Variable;
+
+class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void>{
+    private Environment environment = new Environment();
+
+    void interpret(List<Stmt> statements) {
         try {
-            Object value = evaluate(expression);
-            System.out.println(stringify(value));
+            for(Stmt statement : statements){
+                if (statement != null){
+                    statement.accept(this);
+                    System.out.println(stringify(statement));
+                }
+            }
         } catch (RuntimeError error) {
             OurPL.runtimeError(error);
         }
+    }
+
+    @Override
+    public Void visitVarStatement(Stmt.Var stmt){
+        Object value = null;
+        if(stmt.initializer != null){
+            value = evaluate(stmt.initializer);
+        }
+        environment.define(stmt.name.lexeme, value);
+        return null;
+    }
+    @Override
+    public Void visitBlockStatement(Stmt.Block stmt){
+        Environment previous = this.environment;
+        try {
+            this.environment = new Environment(previous);
+            for (Stmt statement : stmt.statements){
+                statement.accept(this);
+            }
+        } finally {
+            this.environment = previous;
+        }
+        return null;
+    }
+    @Override
+    public Void visitExpressionStatement(Stmt.Expression stmt){
+        evaluate(stmt.expression);
+        return null;
+    }
+    @Override   
+    public Void visitIfStatement(Stmt.If stmt){
+        if(isTruthy(stmt.condition)){
+            stmt.thenBranch.accept(this);
+        } else {
+            stmt.elseBranch.accept(this);
+        }
+        return null;
+    }
+    @Override
+    public Void visitWhileStatement(Stmt.While stmt){
+        while(isTruthy(stmt.condition)){
+            stmt.body.accept(this);
+        }
+        return null;
+    }
+    @Override
+    public Void visitPrintStatement(Stmt.Print stmt){
+        Object value = evaluate(stmt.expression);
+        System.out.println(stringify(value));
+        return null;
+    }
+
+    @Override
+    public Object visitVariableExpr(Expr.Variable expr){
+        return environment.get(expr.name);
+    }
+
+    @Override
+    public Object visitAssignExpr(Expr.Assign expr) {
+        Object value = evaluate(expr.value);
+        environment.assign(expr.name, value);
+        return value;
+    }
+
+    @Override
+    public Object visitLogicalExpr(Expr.Logical expr){
+        Object left = evaluate(expr.left);
+        switch(expr.operator.type){
+            case OR:
+                // short circuit or if left is true
+                if(isTruthy(left)){
+                    return true;
+                } else {
+                    return isTruthy(evaluate(expr.right));
+                }
+            case AND:
+                // short circuit and if left is false
+                if(!isTruthy(left)){
+                    return false;
+                } else {
+                    return isTruthy(evaluate(expr.right));
+                }
+        }
+        return null;
     }
 
     @Override
