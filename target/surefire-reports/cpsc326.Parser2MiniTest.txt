@@ -1,91 +1,25 @@
 -------------------------------------------------------------------------------
 Test set: cpsc326.Parser2MiniTest
 -------------------------------------------------------------------------------
-Tests run: 16, Failures: 10, Errors: 0, Skipped: 0, Time elapsed: 0.042 s <<< FAILURE! -- in cpsc326.Parser2MiniTest
-cpsc326.Parser2MiniTest.logicalOrShortCircuitsDuringInterpretation -- Time elapsed: 0.015 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-expected: <1> but was: <cpsc326.Stmt$Var@7eac9008
-1
-cpsc326.Stmt$Print@4116aac9>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
-	at cpsc326.Parser2MiniTest.logicalOrShortCircuitsDuringInterpretation(Parser2MiniTest.java:273)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
-cpsc326.Parser2MiniTest.logicalAndShortCircuitsDuringInterpretation -- Time elapsed: 0.001 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: 
-expected: <2> but was: <cpsc326.Stmt$Var@5e5d171f
-1
-cpsc326.Stmt$Print@24313fcc
-2
-cpsc326.Stmt$Print@7d20d0b>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
-	at cpsc326.Parser2MiniTest.logicalAndShortCircuitsDuringInterpretation(Parser2MiniTest.java:281)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
+Tests run: 16, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.035 s <<< FAILURE! -- in cpsc326.Parser2MiniTest
+cpsc326.Parser2MiniTest.logicalOrShortCircuitsDuringInterpretation -- Time elapsed: 0.009 s
+cpsc326.Parser2MiniTest.logicalAndShortCircuitsDuringInterpretation -- Time elapsed: 0.001 s
 cpsc326.Parser2MiniTest.reportsMissingLeftParenAfterIf -- Time elapsed: 0.001 s
 cpsc326.Parser2MiniTest.parsesForLoopWithoutClausesAsInfiniteLoop -- Time elapsed: 0.001 s
-cpsc326.Parser2MiniTest.parsesIfElseStatement -- Time elapsed: 0.002 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <1> but was: <4>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
-	at cpsc326.Parser2MiniTest.parseSingleStatement(Parser2MiniTest.java:36)
-	at cpsc326.Parser2MiniTest.parsesIfElseStatement(Parser2MiniTest.java:95)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
-cpsc326.Parser2MiniTest.parsesVariableDeclarationWithInitializer -- Time elapsed: 0.001 s
-cpsc326.Parser2MiniTest.interpretsVariableAssignment -- Time elapsed: 0.001 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:31)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:231)
-	at cpsc326.Parser2MiniTest.interpretsVariableAssignment(Parser2MiniTest.java:250)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
-cpsc326.Parser2MiniTest.bindsElseToNearestIf -- Time elapsed: 0.002 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <1> but was: <5>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
-	at cpsc326.Parser2MiniTest.parseSingleStatement(Parser2MiniTest.java:36)
-	at cpsc326.Parser2MiniTest.bindsElseToNearestIf(Parser2MiniTest.java:113)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
+cpsc326.Parser2MiniTest.parsesIfElseStatement -- Time elapsed: 0.001 s
+cpsc326.Parser2MiniTest.parsesVariableDeclarationWithInitializer -- Time elapsed: 0 s
+cpsc326.Parser2MiniTest.interpretsVariableAssignment -- Time elapsed: 0.001 s
+cpsc326.Parser2MiniTest.bindsElseToNearestIf -- Time elapsed: 0 s
 cpsc326.Parser2MiniTest.reportsMissingSemicolonInsideForHeader -- Time elapsed: 0.001 s
-cpsc326.Parser2MiniTest.interpretsForLoop -- Time elapsed: 0.001 s <<< FAILURE!
+cpsc326.Parser2MiniTest.interpretsForLoop -- Time elapsed: 0.006 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 expected: <0
 1
-2> but was: <>
+2> but was: <0
+
+1
+
+2>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
 	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
@@ -97,24 +31,13 @@ expected: <0
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 
-cpsc326.Parser2MiniTest.parsesAssignmentExpression -- Time elapsed: 0.001 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: not <null>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertNotNull.failNull(AssertNotNull.java:49)
-	at org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:35)
-	at org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:30)
-	at org.junit.jupiter.api.Assertions.assertNotNull(Assertions.java:304)
-	at cpsc326.Parser2MiniTest.parseSingleStatement(Parser2MiniTest.java:37)
-	at cpsc326.Parser2MiniTest.parsesAssignmentExpression(Parser2MiniTest.java:81)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
+cpsc326.Parser2MiniTest.parsesAssignmentExpression -- Time elapsed: 0.001 s
 cpsc326.Parser2MiniTest.interpretsForLoopWithoutIncrementWhenBodyUpdatesVariable -- Time elapsed: 0.002 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 expected: <0
-1> but was: <cpsc326.Stmt$Var@305b7c14>
+1> but was: <0
+
+1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
 	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
@@ -126,33 +49,7 @@ expected: <0
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 
-cpsc326.Parser2MiniTest.parsesForLoopIntoInitializerAndWhile -- Time elapsed: 0.002 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <1> but was: <3>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
-	at cpsc326.Parser2MiniTest.parseSingleStatement(Parser2MiniTest.java:36)
-	at cpsc326.Parser2MiniTest.parsesForLoopIntoInitializerAndWhile(Parser2MiniTest.java:158)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
-cpsc326.Parser2MiniTest.parsesWhileStatement -- Time elapsed: 0.001 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <1> but was: <2>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
-	at cpsc326.Parser2MiniTest.parseSingleStatement(Parser2MiniTest.java:36)
-	at cpsc326.Parser2MiniTest.parsesWhileStatement(Parser2MiniTest.java:139)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
+cpsc326.Parser2MiniTest.parsesForLoopIntoInitializerAndWhile -- Time elapsed: 0.001 s
+cpsc326.Parser2MiniTest.parsesWhileStatement -- Time elapsed: 0.001 s
 cpsc326.Parser2MiniTest.parserRecoversAfterBrokenDeclaration -- Time elapsed: 0.001 s
-cpsc326.Parser2MiniTest.reportsMissingSemicolonAfterVarDeclaration -- Time elapsed: 0.001 s
+cpsc326.Parser2MiniTest.reportsMissingSemicolonAfterVarDeclaration -- Time elapsed: 0 s

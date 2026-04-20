@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="cpsc326.Parser2MiniTest" time="0.042" tests="16" errors="0" skipped="0" failures="10">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="cpsc326.Parser2MiniTest" time="0.035" tests="16" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk21.0.10_7\bin"/>
-    <property name="sun.java.command" value="C:\Users\Admin\AppData\Local\Temp\surefire14655004277875307754\surefirebooter-20260419205609081_3.jar C:\Users\Admin\AppData\Local\Temp\surefire14655004277875307754 2026-04-19T20-56-08_978-jvmRun1 surefire-20260419205609081_1tmp surefire_0-20260419205609081_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Admin\AppData\Local\Temp\surefire10410512838135484496\surefirebooter-20260419213327348_3.jar C:\Users\Admin\AppData\Local\Temp\surefire10410512838135484496 2026-04-19T21-33-27_237-jvmRun1 surefire-20260419213327348_1tmp surefire_0-20260419213327348_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Admin\GUClasses\CPSC326\OurPL\target\test-classes;C:\Users\Admin\GUClasses\CPSC326\OurPL\target\classes;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.3\junit-jupiter-5.10.3.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\Admin\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Admin\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\Admin\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\Admin\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Admin\AppData\Local\Temp\surefire14655004277875307754\surefirebooter-20260419205609081_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Admin\AppData\Local\Temp\surefire10410512838135484496\surefirebooter-20260419213327348_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.10+7-LTS"/>
@@ -59,102 +59,24 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="logicalOrShortCircuitsDuringInterpretation" classname="cpsc326.Parser2MiniTest" time="0.015">
-    <failure message="expected: &lt;1&gt; but was: &lt;cpsc326.Stmt$Var@7eac9008&#10;1&#10;cpsc326.Stmt$Print@4116aac9&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
-expected: <1> but was: <cpsc326.Stmt$Var@7eac9008
-1
-cpsc326.Stmt$Print@4116aac9>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
-	at cpsc326.Parser2MiniTest.logicalOrShortCircuitsDuringInterpretation(Parser2MiniTest.java:273)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
-  </testcase>
-  <testcase name="logicalAndShortCircuitsDuringInterpretation" classname="cpsc326.Parser2MiniTest" time="0.001">
-    <failure message="expected: &lt;2&gt; but was: &lt;cpsc326.Stmt$Var@5e5d171f&#10;1&#10;cpsc326.Stmt$Print@24313fcc&#10;2&#10;cpsc326.Stmt$Print@7d20d0b&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
-expected: <2> but was: <cpsc326.Stmt$Var@5e5d171f
-1
-cpsc326.Stmt$Print@24313fcc
-2
-cpsc326.Stmt$Print@7d20d0b>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
-	at cpsc326.Parser2MiniTest.logicalAndShortCircuitsDuringInterpretation(Parser2MiniTest.java:281)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
-  </testcase>
+  <testcase name="logicalOrShortCircuitsDuringInterpretation" classname="cpsc326.Parser2MiniTest" time="0.009"/>
+  <testcase name="logicalAndShortCircuitsDuringInterpretation" classname="cpsc326.Parser2MiniTest" time="0.001"/>
   <testcase name="reportsMissingLeftParenAfterIf" classname="cpsc326.Parser2MiniTest" time="0.001"/>
   <testcase name="parsesForLoopWithoutClausesAsInfiniteLoop" classname="cpsc326.Parser2MiniTest" time="0.001"/>
-  <testcase name="parsesIfElseStatement" classname="cpsc326.Parser2MiniTest" time="0.002">
-    <failure message="expected: &lt;1&gt; but was: &lt;4&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1> but was: <4>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
-	at cpsc326.Parser2MiniTest.parseSingleStatement(Parser2MiniTest.java:36)
-	at cpsc326.Parser2MiniTest.parsesIfElseStatement(Parser2MiniTest.java:95)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
-    <system-err><![CDATA[Expect expression.
-Expect expression.
-]]></system-err>
-  </testcase>
-  <testcase name="parsesVariableDeclarationWithInitializer" classname="cpsc326.Parser2MiniTest" time="0.001"/>
-  <testcase name="interpretsVariableAssignment" classname="cpsc326.Parser2MiniTest" time="0.001">
-    <failure message="expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertFalse.failNotFalse(AssertFalse.java:63)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:36)
-	at org.junit.jupiter.api.AssertFalse.assertFalse(AssertFalse.java:31)
-	at org.junit.jupiter.api.Assertions.assertFalse(Assertions.java:231)
-	at cpsc326.Parser2MiniTest.interpretsVariableAssignment(Parser2MiniTest.java:250)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
-  </testcase>
-  <testcase name="bindsElseToNearestIf" classname="cpsc326.Parser2MiniTest" time="0.002">
-    <failure message="expected: &lt;1&gt; but was: &lt;5&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1> but was: <5>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
-	at cpsc326.Parser2MiniTest.parseSingleStatement(Parser2MiniTest.java:36)
-	at cpsc326.Parser2MiniTest.bindsElseToNearestIf(Parser2MiniTest.java:113)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
-    <system-err><![CDATA[Expect expression.
-Expect expression.
-Expect expression.
-]]></system-err>
-  </testcase>
+  <testcase name="parsesIfElseStatement" classname="cpsc326.Parser2MiniTest" time="0.001"/>
+  <testcase name="parsesVariableDeclarationWithInitializer" classname="cpsc326.Parser2MiniTest" time="0.0"/>
+  <testcase name="interpretsVariableAssignment" classname="cpsc326.Parser2MiniTest" time="0.001"/>
+  <testcase name="bindsElseToNearestIf" classname="cpsc326.Parser2MiniTest" time="0.0"/>
   <testcase name="reportsMissingSemicolonInsideForHeader" classname="cpsc326.Parser2MiniTest" time="0.001"/>
-  <testcase name="interpretsForLoop" classname="cpsc326.Parser2MiniTest" time="0.001">
-    <failure message="expected: &lt;0&#10;1&#10;2&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
+  <testcase name="interpretsForLoop" classname="cpsc326.Parser2MiniTest" time="0.006">
+    <failure message="expected: &lt;0&#10;1&#10;2&gt; but was: &lt;0&#10;&#10;1&#10;&#10;2&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
 expected: <0
 1
-2> but was: <>
+2> but was: <0
+
+1
+
+2>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
 	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
@@ -167,27 +89,13 @@ expected: <0
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ]]></failure>
   </testcase>
-  <testcase name="parsesAssignmentExpression" classname="cpsc326.Parser2MiniTest" time="0.001">
-    <failure message="expected: not &lt;null&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: not <null>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertNotNull.failNull(AssertNotNull.java:49)
-	at org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:35)
-	at org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:30)
-	at org.junit.jupiter.api.Assertions.assertNotNull(Assertions.java:304)
-	at cpsc326.Parser2MiniTest.parseSingleStatement(Parser2MiniTest.java:37)
-	at cpsc326.Parser2MiniTest.parsesAssignmentExpression(Parser2MiniTest.java:81)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
-    <system-err><![CDATA[Expect expression.
-]]></system-err>
-  </testcase>
+  <testcase name="parsesAssignmentExpression" classname="cpsc326.Parser2MiniTest" time="0.001"/>
   <testcase name="interpretsForLoopWithoutIncrementWhenBodyUpdatesVariable" classname="cpsc326.Parser2MiniTest" time="0.002">
-    <failure message="expected: &lt;0&#10;1&gt; but was: &lt;cpsc326.Stmt$Var@305b7c14&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
+    <failure message="expected: &lt;0&#10;1&gt; but was: &lt;0&#10;&#10;1&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
 expected: <0
-1> but was: <cpsc326.Stmt$Var@305b7c14>
+1> but was: <0
+
+1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
 	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
@@ -200,43 +108,8 @@ expected: <0
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ]]></failure>
   </testcase>
-  <testcase name="parsesForLoopIntoInitializerAndWhile" classname="cpsc326.Parser2MiniTest" time="0.002">
-    <failure message="expected: &lt;1&gt; but was: &lt;3&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1> but was: <3>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
-	at cpsc326.Parser2MiniTest.parseSingleStatement(Parser2MiniTest.java:36)
-	at cpsc326.Parser2MiniTest.parsesForLoopIntoInitializerAndWhile(Parser2MiniTest.java:158)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
-    <system-err><![CDATA[Expect expression.
-Expect expression.
-Expect expression.
-]]></system-err>
-  </testcase>
-  <testcase name="parsesWhileStatement" classname="cpsc326.Parser2MiniTest" time="0.001">
-    <failure message="expected: &lt;1&gt; but was: &lt;2&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1> but was: <2>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
-	at cpsc326.Parser2MiniTest.parseSingleStatement(Parser2MiniTest.java:36)
-	at cpsc326.Parser2MiniTest.parsesWhileStatement(Parser2MiniTest.java:139)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
-    <system-err><![CDATA[Expect expression.
-Expect expression.
-]]></system-err>
-  </testcase>
+  <testcase name="parsesForLoopIntoInitializerAndWhile" classname="cpsc326.Parser2MiniTest" time="0.001"/>
+  <testcase name="parsesWhileStatement" classname="cpsc326.Parser2MiniTest" time="0.001"/>
   <testcase name="parserRecoversAfterBrokenDeclaration" classname="cpsc326.Parser2MiniTest" time="0.001"/>
-  <testcase name="reportsMissingSemicolonAfterVarDeclaration" classname="cpsc326.Parser2MiniTest" time="0.001"/>
+  <testcase name="reportsMissingSemicolonAfterVarDeclaration" classname="cpsc326.Parser2MiniTest" time="0.0"/>
 </testsuite>

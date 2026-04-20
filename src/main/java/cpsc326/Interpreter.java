@@ -12,7 +12,6 @@ class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void>{
             for(Stmt statement : statements){
                 if (statement != null){
                     statement.accept(this);
-                    System.out.println(stringify(statement));
                 }
             }
         } catch (RuntimeError error) {
@@ -49,16 +48,16 @@ class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void>{
     }
     @Override   
     public Void visitIfStatement(Stmt.If stmt){
-        if(isTruthy(stmt.condition)){
+        if(isTruthy(evaluate(stmt.condition))){ 
             stmt.thenBranch.accept(this);
-        } else {
+        } else if (stmt.elseBranch != null) {
             stmt.elseBranch.accept(this);
         }
         return null;
     }
     @Override
     public Void visitWhileStatement(Stmt.While stmt){
-        while(isTruthy(stmt.condition)){
+        while(isTruthy(evaluate(stmt.condition))){
             stmt.body.accept(this);
         }
         return null;
