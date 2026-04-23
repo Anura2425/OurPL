@@ -9,6 +9,22 @@ abstract class Stmt {
         R visitBlockStatement(Stmt.Block Stmt);
         R visitIfStatement(Stmt.If Stmt);
         R visitWhileStatement(Stmt.While Stmt);
+        R visitFunctionStatement(Stmt.Function Stmt);
+    }
+
+    static class Function extends Stmt {
+        Token name;
+        List<Token> params;
+        List<Stmt> body;
+        Function(Token name, List<Token> params, List<Stmt> body) {
+            this.name = name;
+            this.params = params;
+            this.body = body;
+        }
+        @Override
+        <R> R accept(Visitor<R> visitor) {
+           return visitor.visitFunctionStatement(this);
+        }
     }
 
     static class Block extends Stmt {
