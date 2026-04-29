@@ -11,8 +11,18 @@ public class OurPLFunction implements OurPLCallable{
 
     @Override
     public Object call(Interpreter interpreter, List<Object> arguments){
-        
+        // new env for this function calls scope
+        Environment environment = new Environment(interpreter.globals);
+        for (int i = 0; i < declaration.params.size(); i++) {
+            environment.define(declaration.params.get(i).lexeme, arguments.get(i));
+        }
 
+        try{
+            interpreter.executeBlock(declaration.body, environment);
+        }catch(Return returnValue){
+            return returnValue.value;
+        }
+        return null;
     }
     
     @Override

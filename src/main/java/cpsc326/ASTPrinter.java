@@ -6,6 +6,12 @@ class ASTPrinter implements Expr.Visitor<String>{
     }
 
     @Override
+    public String visitCallExpr(Expr.Call expr){
+        //TODO: actually make this work cuz it dont rn :/
+        return parenthesize("", null);
+    }
+
+    @Override
     public String visitAssignExpr(Expr.Assign expr) {
         return parenthesize("assign " + expr.name.lexeme, expr.value);
     }

@@ -1,11 +1,14 @@
 package cpsc326;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import cpsc326.Expr.Variable;
 
 class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void>{
-    private Environment environment = new Environment();
+    final Environment globals = new Environment();
+    private Environment environment = globals;
+
 
     void interpret(List<Stmt> statements) {
         try {
@@ -21,6 +24,39 @@ class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void>{
 
     private void execute(Stmt stmt) {
         stmt.accept(this);
+    }
+
+    @Override
+    public Void visitFunctionStatement(Stmt.Function stmt){
+        OurPLFunction function = new OurPLFunction(stmt);
+        environment.define(stmt.name.lexeme, function);
+        return null;
+    }
+
+    @Override
+    public Object visitCallExpr(Expr.Call expr){
+        Object callee = evaluate(expr.callee);
+        List<Object> arguments = new ArrayList<>();
+        for(Expr argument : expr.arguments){
+            arguments.add(evaluate(argument));
+        }
+        if(!(callee instanceof OurPLCallable)){
+            throw new RuntimeError(expr.paren, "Should only call functions/classes.");
+        }
+        OurPLCallable function = (OurPLCallable)callee;
+
+        // check for arity thing
+        if (arguments.size() != function.arity()){
+            throw new RuntimeError(expr.paren, "Expected " + function.arity() + "but instead got size of " + arguments.size());
+        }
+        return function.call(this, arguments);
+    }
+
+    @Override 
+    public Void visitReturnStatement(Stmt.Return stmt){
+        Object value = null;
+        if (stmt.value != null) value = evaluate(stmt.value);
+        throw new Return(value);
     }
 
     @Override

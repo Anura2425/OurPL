@@ -47,7 +47,7 @@ public class OurPL {
         }
     }
 
-    // run using ` mvn exec:java "-Dexec.args=examples/parse1.opl" `
+    // run using ` mvn exec:java -Dexec.args="examples/p3ex01.opl" `
     public static void run(String source) {
         // Lexer
         Lexer lexer = new Lexer(source);
@@ -58,10 +58,10 @@ public class OurPL {
         }
         
         // Parser
-        // TODO: Make ASTPrinter work with statements
         Parser parser = new Parser(tokens);
         List<Stmt> stmts = parser.parse();
 
+        // TODO: comment this out to get rid of printing what stmts the parser creates, just for checking rn
         System.out.println((stmts));
         // if (expr != null){
         //     System.out.println("\nASTPrinter Output:");

@@ -1,0 +1,22 @@
+fun threesOrFivesBelow(n){
+    var sum = 0;
+    for(var i = 1; i < n; i = i + 1){
+        if(mod(i,3) == 0 or mod(i,5) == 0){
+            sum = sum + i;
+        }
+    }
+    return sum;
+}
+
+fun mod(n, m){
+    if (n < 0 and m < 0) {
+        return - mod(-n, -m);
+    }
+    var curr = 0;
+    while (n >= curr){
+        curr = curr + m;
+    }
+    return (n - (curr-m));
+}
+
+print threesOrFivesBelow(10); # outputs 23
