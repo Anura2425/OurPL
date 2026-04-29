@@ -40,8 +40,9 @@ class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void>{
         for(Expr argument : expr.arguments){
             arguments.add(evaluate(argument));
         }
+        // check if "callee" is actually a function
         if(!(callee instanceof OurPLCallable)){
-            throw new RuntimeError(expr.paren, "Should only call functions/classes.");
+            throw new RuntimeError(expr.paren, "Should only call functions");
         }
         OurPLCallable function = (OurPLCallable)callee;
 

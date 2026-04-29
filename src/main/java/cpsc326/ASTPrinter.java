@@ -7,8 +7,8 @@ class ASTPrinter implements Expr.Visitor<String>{
 
     @Override
     public String visitCallExpr(Expr.Call expr){
-        //TODO: actually make this work cuz it dont rn :/
-        return parenthesize("", null);
+        //TODO: actually make this work cuz i dont think this is what its supposed to do rn
+        return parenthesize("call", expr.callee);
     }
 
     @Override
