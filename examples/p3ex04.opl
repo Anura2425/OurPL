@@ -1,0 +1,2 @@
+print clock; # test that clocks toString is working
+print clock(); # test that calling clock works and properly prints time in seconds
