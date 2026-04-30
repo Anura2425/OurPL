@@ -58,21 +58,13 @@ class Parser {
         Token name = consume(IDENTIFIER, "Expect function name identifier.");
         consume(LEFT_PAREN, "Except '(' after identifier.");
 
-        List<Token> parameters = new ArrayList<>();
-        if(!check(RIGHT_PAREN)){
-            do{
-                if (parameters.size() >= 255){
-                    error(peek(), "Can't have more than 255 parameters.");
-                }
-                parameters.add(consume(IDENTIFIER, "Except parameter name."));
-            } while (match(COMMA));
-        }
+        List<Token> parameters = parameters();
+
         consume(RIGHT_PAREN, "Expect ')' after parameters of function.");
         consume(LEFT_BRACE, "Expect '{' before body.");
 
         Stmt.Block bodyBlock = (Stmt.Block)block();
-        List<Stmt> body = bodyBlock.statements;
-        return new Stmt.Function(name, parameters, body);
+        return new Stmt.Function(name, parameters, bodyBlock.statements);
     }
 
     private Stmt returnStatement() {
@@ -301,7 +293,22 @@ class Parser {
         return expr;
     }
 
-    private Expr finishCall(Expr callee) {
+    private List<Token> parameters() {
+        List<Token> parameters = new ArrayList<>();
+        
+        if (!check(RIGHT_PAREN)) {
+            do {
+                if (parameters.size() >= 255) {
+                    error(peek(), "Cant have more than 255 parameters.");
+                }
+                parameters.add(consume(IDENTIFIER, "Expect parameter name."));
+            } while (match(COMMA));
+        }
+    
+        return parameters;
+    }
+
+    private List<Expr> arguments(){
         List<Expr> arguments = new ArrayList<>();
         if(!check(RIGHT_PAREN)){
             do {
@@ -311,6 +318,11 @@ class Parser {
                 arguments.add(expression());
             } while (match(COMMA));
         }
+        return arguments;
+    }
+
+    private Expr finishCall(Expr callee) {
+        List<Expr> arguments = arguments();
         Token paren = consume(RIGHT_PAREN, "Expect ')' after arguments.");
         return new Expr.Call(callee, paren, arguments);
     }
