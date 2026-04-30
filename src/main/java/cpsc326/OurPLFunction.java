@@ -32,6 +32,6 @@ public class OurPLFunction implements OurPLCallable{
 
     @Override
     public String toString() {
-        return "< fn " + declaration.name.lexeme + ">";
+        return "<fn " + declaration.name.lexeme + ">";
     }
 }
