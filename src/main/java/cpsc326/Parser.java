@@ -70,7 +70,8 @@ class Parser {
         consume(RIGHT_PAREN, "Expect ')' after parameters of function.");
         consume(LEFT_BRACE, "Expect '{' before body.");
 
-        List<Stmt> body = block();
+        Stmt.Block bodyBlock = (Stmt.Block)block();
+        List<Stmt> body = bodyBlock.statements;
         return new Stmt.Function(name, parameters, body);
     }
 
@@ -100,7 +101,7 @@ class Parser {
         if (match(PRINT)) return printStatement();
         if (match(RETURN)) return returnStatement();
         if (match(WHILE)) return whileStatement();
-        if (match(LEFT_BRACE)) return blockStatement();
+        if (match(LEFT_BRACE)) return block();
         // if it doesnt hit any of the above statement types it should just default to an expression statement
         return expressionStatement();
     }
@@ -170,17 +171,13 @@ class Parser {
     }
 
     // helper cuz both blockStatement and function need to parse list of statements and I dont wanna write it twice :>
-    private List<Stmt> block() {
+    private Stmt block() {
         List<Stmt> statements = new ArrayList<>();
         while (!check(RIGHT_BRACE) && !isAtEnd()){
             statements.add(declaration());
         }
         consume(RIGHT_BRACE, "Expected '}' to end block.");
-        return statements;
-    }
-
-    private Stmt blockStatement() {
-        return new Stmt.Block(block());
+        return new Stmt.Block(statements);
     }
 
     private Stmt expressionStatement(){
