@@ -8,7 +8,24 @@ import cpsc326.Expr.Variable;
 class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void>{
     final Environment globals = new Environment();
     private Environment environment = globals;
+    
+    Interpreter() {
+        globals.define("clock", new OurPLCallable() {
+            @Override
+            public int arity() {return 0;}
 
+            @Override
+            public Object call(Interpreter interpreter, List<Object> arguments) {
+                return (double)System.currentTimeMillis() / 1000.0; // time in secs
+            }
+
+            // not sure what this is acc supposed to return so just gave a generic function tag
+            @Override
+            public String toString() {
+                return "<fn clock>";
+            }
+        });
+    }
 
     void interpret(List<Stmt> statements) {
         try {
@@ -25,6 +42,7 @@ class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void>{
     private void execute(Stmt stmt) {
         stmt.accept(this);
     }
+    
 
     @Override
     public Void visitFunctionStatement(Stmt.Function stmt){

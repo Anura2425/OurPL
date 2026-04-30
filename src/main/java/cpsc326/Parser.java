@@ -37,7 +37,9 @@ class Parser {
 
     private Stmt declaration(){
         try{
-            if(match(FUN)) return function("function");
+            if(match(FUN)) {
+                return funDecl();
+            }
             if(match(VAR)){
                 return varDeclaration();
             }
@@ -48,9 +50,13 @@ class Parser {
         }
     }
 
-    private Stmt.Function function(String fun){
-        Token name = consume(IDENTIFIER, "Expect " + fun + " name.");
-        consume(LEFT_PAREN, "Except '(' after " + fun + " name.");
+    private Stmt funDecl(){
+        return function();
+    }
+
+    private Stmt function(){
+        Token name = consume(IDENTIFIER, "Expect function name identifier.");
+        consume(LEFT_PAREN, "Except '(' after identifier.");
 
         List<Token> parameters = new ArrayList<>();
         if(!check(RIGHT_PAREN)){
@@ -62,7 +68,7 @@ class Parser {
             } while (match(COMMA));
         }
         consume(RIGHT_PAREN, "Expect ')' after parameters of function.");
-        consume(LEFT_BRACE, "Expect '{' before " + fun + " body.");
+        consume(LEFT_BRACE, "Expect '{' before body.");
 
         List<Stmt> body = block();
         return new Stmt.Function(name, parameters, body);
