@@ -3,7 +3,7 @@
 # use logorithmic identity
 # a^b = e^(b*ln(a))
 
-#taylor expansion for e^x 
+# taylor expansion for e^x 
 # 1 + x + (x^2)/2! + (x^3)/3! + ...
 fun exp(x){
     var sum = 1.0;
@@ -21,7 +21,7 @@ fun exp(x){
 }
 
 
-# more eff series expansion for natural log using maclaur: ln(1+x) - ln(1-x) = ln(1+x/1-x) : cancel out even pows converging for any pos 1+x/1-x, skipping half the calcs, and making precision better
+# more eff series expansion for natural log derived from: ln(1+x) - ln(1-x) = ln(1+x/1-x) : cancel out even pows converging for any pos 1+x/1-x, skipping half the calcs, and making precision better
 # full expansion: ln(x) = 2 sum{infinity}{i=0}{(1/(2i+1)) * ((x-1)/(x+1))^(2i+1)}
 fun ln(x){
     #undefined for neg numbers
@@ -35,7 +35,7 @@ fun ln(x){
     var term = y;
 
     var i = 0;
-    while (i<50){
+    while (i<10){
         sum = sum + (term / (2 * i + 1));
         term = term * y2; # y^1, y^3, y^5, ... increase power by 2 each step since evens have been canceled out anyways
         i = i + 1;
@@ -103,6 +103,28 @@ fun pow(a,b){
     return exp(b*ln(a));
 }
 
+
+
+
+# mvn exec:java -q -Dexec.args="examples/bounty1b.opl"
+
+# fractional exponent test
+var start = clock();
+
 print pow(2, 0.5);
 print pow(2, -0.5);
+print pow(2, -0.1);
+
+# large exponent tests
 print pow(2, 100);
+print pow(2, 1000);
+
+# other tests
+print pow(-2, 3);
+print pow(-2, 4);
+
+var end = clock();
+var time = end - start;
+
+print "Run Time:";
+print time;
