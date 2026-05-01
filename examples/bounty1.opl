@@ -1,0 +1,21 @@
+# pow(,) (+/-) int      DOESNT HANDLE FLOATS
+
+fun pow(a, b){
+    var p = 1;
+    while (b > 0){
+        p = p * a;
+        b = b - 1;
+    }
+    if (b < 0){
+       return (1/pow(a, (-b)));
+    }
+    return p;
+}
+
+
+print pow(2, -4);
+print pow(-2,-3);
+print pow(-2, 3);
+print pow(-2, 4);
+print pow(2, 10);
+print pow(10, 0);

@@ -53,16 +53,16 @@ public class OurPL {
         Lexer lexer = new Lexer(source);
         List<Token> tokens = lexer.scanTokens();
 
-        for (Token token : tokens){
-            System.out.println(token);
-        }
+        // for (Token token : tokens){
+        //     System.out.println(token);
+        // }
         
         // Parser
         Parser parser = new Parser(tokens);
         List<Stmt> stmts = parser.parse();
 
         // TODO: comment this out to get rid of printing what stmts the parser creates, just for checking rn
-        System.out.println((stmts));
+        // System.out.println((stmts));
         // if (expr != null){
         //     System.out.println("\nASTPrinter Output:");
         //     System.out.println(new ASTPrinter().print(expr));

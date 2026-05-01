@@ -1,0 +1,108 @@
+# this is lowk the messiest code of all time sorry for those who read this
+# NOTES:
+# use logorithmic identity
+# a^b = e^(b*ln(a))
+
+#taylor expansion for e^x 
+# 1 + x + (x^2)/2! + (x^3)/3! + ...
+fun exp(x){
+    var sum = 1.0;
+    var term = 1.0; # track current part being added
+    var i = 1;
+
+    # 25 good enough but could increase for more acc approximation
+    while (i<25){ 
+        term  = term * x / i; # gets rid of need for fac function which was slow and getting re called
+        sum = sum + term;
+        i = i + 1;
+    }
+
+    return sum;
+}
+
+
+# more eff series expansion for natural log using maclaur: ln(1+x) - ln(1-x) = ln(1+x/1-x) : cancel out even pows converging for any pos 1+x/1-x, skipping half the calcs, and making precision better
+# full expansion: ln(x) = 2 sum{infinity}{i=0}{(1/(2i+1)) * ((x-1)/(x+1))^(2i+1)}
+fun ln(x){
+    #undefined for neg numbers
+    if (x <= 0){
+        return nil;
+    }
+
+    var y = (x-1) / (x+1); # makes convergance faster than traditional ln expansion
+    var y2 = y * y;
+    var sum = 0.0;
+    var term = y;
+
+    var i = 0;
+    while (i<50){
+        sum = sum + (term / (2 * i + 1));
+        term = term * y2; # y^1, y^3, y^5, ... increase power by 2 each step since evens have been canceled out anyways
+        i = i + 1;
+    }
+    return 2 * sum;
+}
+
+fun mod(n, m) {
+    return (n - m*(floor(n/m)));
+}
+
+fun floor(n) {
+    var residual = n;
+    if (n >= 0) {
+        # for pos nums, subtract 1 until decimal is all thats left
+        while (residual >= 1) {
+            residual = residual - 1;
+        }
+        return n - residual;
+    } else {
+        # for neg numbers, add 1 until between -1 and 0
+        while (residual <= -1) {
+            residual = residual + 1;
+        }
+        # ex. floor(-1.5) should be -2
+        # so here residual is -0.5. n - (1 + -0.5) = n - 0.5 = -2.
+        if (residual < 0) {
+            return n - (1 + residual);
+        }
+        return n;
+    }
+}
+
+fun pow(a,b){
+    if(a==0){
+        return 0;
+    }
+    if(b==0){
+        return 1;
+    }
+
+    # negative pows: a^(-b) = 1 / (a^b)
+    if (b<0){
+        return 1/pow(a, -b);
+    }
+
+    # integer exponents case so we arent estimating when unneeded:
+    if(mod(b, 1) == 0){
+        var res = 1;
+        var i = 0;
+        while(i < b){
+            res = res * a;
+            i = i + 1;
+        }
+        return res;
+    }
+
+    # base has to be pos for fractional exp
+    if (a < 0) {
+        return nil;
+    }
+
+    # exponential case using the identity:
+    # a^b = e^(b*ln(a))
+    return exp(b*ln(a));
+}
+
+print pow(2, 0.5);
+print pow(2, -0.5);
+print pow(2, 100);

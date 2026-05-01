@@ -1,0 +1,37 @@
+# gcd (euclidian algorithm) (+/-)int
+
+fun mod(n, m) {
+    return (n - m*(floor(n/m)));
+}
+
+fun floor(n) {
+    var residual = n;
+    if (n < 0) {
+        while (residual < -1) {
+            residual = residual + 1;
+        }
+        if (residual < 0 and residual > -1) {
+            return (n - (1+residual));
+        }
+        return n;
+    }
+    while (residual > 1) {
+        residual = residual - 1;
+    }
+    if (residual > 0 and residual < 1) {
+
+        return (n-residual);
+    }
+    return n;
+}
+
+fun gcd(a, b){
+    if (a == 0){
+        return b;
+    }
+    return (gcd(mod(b, a), a));
+}
+
+print gcd(967927, 396329);
+print gcd(36, 112);
+print gcd(100, 150);

@@ -1,0 +1,31 @@
+# mod(,)(+/-) int
+
+fun mod(n, m) {
+    return (n - m*(floor(n/m)));
+}
+
+fun floor(n) {
+    var residual = n;
+    if (n >= 0) {
+        while (residual < -1) {
+            residual = residual + 1;
+        }
+        if (residual < 0 and residual > -1) {
+            return (n - (1+residual));
+        }
+        return n;
+    }
+    while (residual > 1) {
+        residual = residual - 1;
+    }
+    if (residual > 0 and residual < 1) {
+
+        return (n-residual);
+    }
+    return n;
+}
+
+print mod(21,5);
+print mod(-21,5);
+print mod(-21,-5);
+print mod(21,-5);
