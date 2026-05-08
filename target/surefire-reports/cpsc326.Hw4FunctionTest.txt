@@ -1,0 +1,54 @@
+-------------------------------------------------------------------------------
+Test set: cpsc326.Hw4FunctionTest
+-------------------------------------------------------------------------------
+Tests run: 41, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.153 s <<< FAILURE! -- in cpsc326.Hw4FunctionTest
+cpsc326.Hw4FunctionTest.earlierArgumentRuntimeErrorStopsLaterArgumentEvaluationAndCall -- Time elapsed: 0.021 s
+cpsc326.Hw4FunctionTest.blockLocalFunctionDoesNotLeakOutsideBlock -- Time elapsed: 0.003 s
+cpsc326.Hw4FunctionTest.functionCanReturnFunctionAndResultCanBeCalled -- Time elapsed: 0.003 s
+cpsc326.Hw4FunctionTest.parsesCallExpressionWithNoArguments -- Time elapsed: 0.002 s
+cpsc326.Hw4FunctionTest.arityErrorDoesNotExecuteFunctionBody -- Time elapsed: 0.009 s
+cpsc326.Hw4FunctionTest.runtimeErrorWhenFunctionReceivesTooFewArguments -- Time elapsed: 0.002 s
+cpsc326.Hw4FunctionTest.missingLeftParenAfterFunctionNameReportsParseError -- Time elapsed: 0.002 s
+cpsc326.Hw4FunctionTest.functionCanReturnAnotherCallResult -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.parsesReturnWithoutValueAsNullReturnValue -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.clockIsCallableWithNoArgumentsAndReportsSecondsScale -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.supportsRecursiveFunctionCalls -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.argumentExpressionsAreEvaluatedLeftToRightBeforeCall -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.missingRightParenInCallReportsParseError -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.returnExitsFunctionBeforeLaterStatements -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.missingParameterNameReportsParseError -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.parameterBindingShadowsGlobalVariableInsideFunction -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.functionCanAssignGlobalVariable -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.missingSemicolonAfterReturnValueReportsParseError -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.parsesCallExpressionWithMultipleArguments -- Time elapsed: 0 s
+cpsc326.Hw4FunctionTest.exactly255ArgumentsIsAcceptedByParser -- Time elapsed: 0.024 s
+cpsc326.Hw4FunctionTest.exactly255ParametersIsAccepted -- Time elapsed: 0.008 s
+cpsc326.Hw4FunctionTest.runtimeErrorWhenFunctionReceivesTooManyArguments -- Time elapsed: 0.002 s
+cpsc326.Hw4FunctionTest.functionsCanCallEarlierDeclaredFunctions -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.functionValueCanBeStoredAndCalledAfterBlock -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.printFunctionObjectUsesFunctionName -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.functionDeclaredInsideFunctionCanBeCalledInsideThatFunction -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.moreThan255ArgumentsReportsErrorButParserStillReturnsCall -- Time elapsed: 0.004 s
+cpsc326.Hw4FunctionTest.trailingCommaInCallReportsParseError -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.moreThan255ParametersReportsErrorButParserStillReturnsStatement -- Time elapsed: 0.002 s
+cpsc326.Hw4FunctionTest.interpretsUserFunctionReturnValue -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.parsesFunctionDeclarationWithNoParameters -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.functionWithoutExplicitReturnProducesNil -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.clockRejectsArgumentsByArity -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.returnWithoutValueProducesNil -- Time elapsed: 0 s
+cpsc326.Hw4FunctionTest.nestedCallsEvaluateArgumentsBeforeOuterCall -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.missingFunctionNameReportsParseError -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.functionCanReceiveFunctionArgumentAndCallIt -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.callBeforeFunctionDeclarationIsRuntimeError -- Time elapsed: 0 s
+cpsc326.Hw4FunctionTest.parsesFunctionDeclarationWithParamsAndReturnBody -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.missingFunctionBodyBraceReportsParseError -- Time elapsed: 0.001 s
+cpsc326.Hw4FunctionTest.userFunctionCanShadowNativeClock -- Time elapsed: 0.008 s <<< ERROR!
+java.lang.NullPointerException: Cannot read field "line" because "error.token" is null
+	at cpsc326.OurPL.runtimeError(OurPL.java:91)
+	at cpsc326.Interpreter.interpret(Interpreter.java:38)
+	at cpsc326.Hw4FunctionTest.interpret(Hw4FunctionTest.java:53)
+	at cpsc326.Hw4FunctionTest.userFunctionCanShadowNativeClock(Hw4FunctionTest.java:537)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

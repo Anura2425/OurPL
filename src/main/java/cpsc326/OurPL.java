@@ -89,7 +89,8 @@ public class OurPL {
     // get rid of this later, mvn getting mad at me because interpreter file was having error because this function didn't exist 😡😡😡😡😡😡😡
     static void runtimeError(RuntimeError error) {
         System.err.println(error.getMessage() + "\n[line " + error.token.line + "]");
-        hadError = true;
+        // hadError = true; 
+        // FIXME: this was all I changed and all test failures fixed
         hadRuntimeError = true;
     }
 }

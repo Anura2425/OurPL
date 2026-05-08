@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: cpsc326.Parser2MiniTest
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s -- in cpsc326.Parser2MiniTest
+cpsc326.Parser2MiniTest.logicalOrShortCircuitsDuringInterpretation -- Time elapsed: 0.002 s
+cpsc326.Parser2MiniTest.logicalAndShortCircuitsDuringInterpretation -- Time elapsed: 0.001 s
+cpsc326.Parser2MiniTest.reportsMissingLeftParenAfterIf -- Time elapsed: 0.001 s
+cpsc326.Parser2MiniTest.parsesForLoopWithoutClausesAsInfiniteLoop -- Time elapsed: 0.001 s
+cpsc326.Parser2MiniTest.parsesIfElseStatement -- Time elapsed: 0.001 s
+cpsc326.Parser2MiniTest.parsesVariableDeclarationWithInitializer -- Time elapsed: 0 s
+cpsc326.Parser2MiniTest.interpretsVariableAssignment -- Time elapsed: 0.001 s
+cpsc326.Parser2MiniTest.bindsElseToNearestIf -- Time elapsed: 0.003 s
+cpsc326.Parser2MiniTest.reportsMissingSemicolonInsideForHeader -- Time elapsed: 0.002 s
+cpsc326.Parser2MiniTest.interpretsForLoop -- Time elapsed: 0.002 s
+cpsc326.Parser2MiniTest.parsesAssignmentExpression -- Time elapsed: 0.002 s
+cpsc326.Parser2MiniTest.interpretsForLoopWithoutIncrementWhenBodyUpdatesVariable -- Time elapsed: 0.003 s
+cpsc326.Parser2MiniTest.parsesForLoopIntoInitializerAndWhile -- Time elapsed: 0.002 s
+cpsc326.Parser2MiniTest.parsesWhileStatement -- Time elapsed: 0.001 s
+cpsc326.Parser2MiniTest.parserRecoversAfterBrokenDeclaration -- Time elapsed: 0.002 s
+cpsc326.Parser2MiniTest.reportsMissingSemicolonAfterVarDeclaration -- Time elapsed: 0.002 s

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="cpsc326.Hw4FunctionTest" time="0.153" tests="41" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/anura/GUClasses/CPSC326/OurPL/target/test-classes:/home/anura/GUClasses/CPSC326/OurPL/target/classes:/home/anura/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.3/junit-jupiter-5.10.3.jar:/home/anura/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.3/junit-jupiter-api-5.10.3.jar:/home/anura/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/anura/.m2/repository/org/junit/platform/junit-platform-commons/1.10.3/junit-platform-commons-1.10.3.jar:/home/anura/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/anura/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.3/junit-jupiter-params-5.10.3.jar:/home/anura/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.3/junit-jupiter-engine-5.10.3.jar:/home/anura/.m2/repository/org/junit/platform/junit-platform-engine/1.10.3/junit-platform-engine-1.10.3.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/anura/GUClasses/CPSC326/OurPL/target/surefire/surefirebooter-20260508103119663_3.jar /home/anura/GUClasses/CPSC326/OurPL/target/surefire 2026-05-08T10-31-19_478-jvmRun1 surefire-20260508103119663_1tmp surefire_0-20260508103119663_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/anura/GUClasses/CPSC326/OurPL/target/test-classes:/home/anura/GUClasses/CPSC326/OurPL/target/classes:/home/anura/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.3/junit-jupiter-5.10.3.jar:/home/anura/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.3/junit-jupiter-api-5.10.3.jar:/home/anura/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/anura/.m2/repository/org/junit/platform/junit-platform-commons/1.10.3/junit-platform-commons-1.10.3.jar:/home/anura/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/anura/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.3/junit-jupiter-params-5.10.3.jar:/home/anura/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.3/junit-jupiter-engine-5.10.3.jar:/home/anura/.m2/repository/org/junit/platform/junit-platform-engine/1.10.3/junit-platform-engine-1.10.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/anura"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/anura/GUClasses/CPSC326/OurPL"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/anura/GUClasses/CPSC326/OurPL/target/surefire/surefirebooter-20260508103119663_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.8+9-Ubuntu-0ubuntu124.04.1"/>
+    <property name="user.name" value="anura"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.8.0-60-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/anura/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.8"/>
+    <property name="user.dir" value="/home/anura/GUClasses/CPSC326/OurPL"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="21.0.8+9-Ubuntu-0ubuntu124.04.1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="earlierArgumentRuntimeErrorStopsLaterArgumentEvaluationAndCall" classname="cpsc326.Hw4FunctionTest" time="0.021"/>
+  <testcase name="blockLocalFunctionDoesNotLeakOutsideBlock" classname="cpsc326.Hw4FunctionTest" time="0.003"/>
+  <testcase name="functionCanReturnFunctionAndResultCanBeCalled" classname="cpsc326.Hw4FunctionTest" time="0.003"/>
+  <testcase name="parsesCallExpressionWithNoArguments" classname="cpsc326.Hw4FunctionTest" time="0.002"/>
+  <testcase name="arityErrorDoesNotExecuteFunctionBody" classname="cpsc326.Hw4FunctionTest" time="0.009"/>
+  <testcase name="runtimeErrorWhenFunctionReceivesTooFewArguments" classname="cpsc326.Hw4FunctionTest" time="0.002"/>
+  <testcase name="missingLeftParenAfterFunctionNameReportsParseError" classname="cpsc326.Hw4FunctionTest" time="0.002"/>
+  <testcase name="functionCanReturnAnotherCallResult" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="parsesReturnWithoutValueAsNullReturnValue" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="clockIsCallableWithNoArgumentsAndReportsSecondsScale" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="supportsRecursiveFunctionCalls" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="argumentExpressionsAreEvaluatedLeftToRightBeforeCall" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="missingRightParenInCallReportsParseError" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="returnExitsFunctionBeforeLaterStatements" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="missingParameterNameReportsParseError" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="parameterBindingShadowsGlobalVariableInsideFunction" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="functionCanAssignGlobalVariable" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="missingSemicolonAfterReturnValueReportsParseError" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="parsesCallExpressionWithMultipleArguments" classname="cpsc326.Hw4FunctionTest" time="0.0"/>
+  <testcase name="exactly255ArgumentsIsAcceptedByParser" classname="cpsc326.Hw4FunctionTest" time="0.024"/>
+  <testcase name="exactly255ParametersIsAccepted" classname="cpsc326.Hw4FunctionTest" time="0.008"/>
+  <testcase name="runtimeErrorWhenFunctionReceivesTooManyArguments" classname="cpsc326.Hw4FunctionTest" time="0.002"/>
+  <testcase name="functionsCanCallEarlierDeclaredFunctions" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="functionValueCanBeStoredAndCalledAfterBlock" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="printFunctionObjectUsesFunctionName" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="functionDeclaredInsideFunctionCanBeCalledInsideThatFunction" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="moreThan255ArgumentsReportsErrorButParserStillReturnsCall" classname="cpsc326.Hw4FunctionTest" time="0.004"/>
+  <testcase name="trailingCommaInCallReportsParseError" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="moreThan255ParametersReportsErrorButParserStillReturnsStatement" classname="cpsc326.Hw4FunctionTest" time="0.002"/>
+  <testcase name="interpretsUserFunctionReturnValue" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="parsesFunctionDeclarationWithNoParameters" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="functionWithoutExplicitReturnProducesNil" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="clockRejectsArgumentsByArity" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="returnWithoutValueProducesNil" classname="cpsc326.Hw4FunctionTest" time="0.0"/>
+  <testcase name="nestedCallsEvaluateArgumentsBeforeOuterCall" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="missingFunctionNameReportsParseError" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="functionCanReceiveFunctionArgumentAndCallIt" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="callBeforeFunctionDeclarationIsRuntimeError" classname="cpsc326.Hw4FunctionTest" time="0.0"/>
+  <testcase name="parsesFunctionDeclarationWithParamsAndReturnBody" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="missingFunctionBodyBraceReportsParseError" classname="cpsc326.Hw4FunctionTest" time="0.001"/>
+  <testcase name="userFunctionCanShadowNativeClock" classname="cpsc326.Hw4FunctionTest" time="0.008">
+    <error message="Cannot read field &quot;line&quot; because &quot;error.token&quot; is null" type="java.lang.NullPointerException"><![CDATA[java.lang.NullPointerException: Cannot read field "line" because "error.token" is null
+	at cpsc326.OurPL.runtimeError(OurPL.java:91)
+	at cpsc326.Interpreter.interpret(Interpreter.java:38)
+	at cpsc326.Hw4FunctionTest.interpret(Hw4FunctionTest.java:53)
+	at cpsc326.Hw4FunctionTest.userFunctionCanShadowNativeClock(Hw4FunctionTest.java:537)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+</testsuite>
